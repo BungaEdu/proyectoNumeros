@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         int arrayUs [] = new int [10];
+        int arrayImp [] = new int [10];
         Scanner sc = new Scanner(System.in);
         int numUs = 0, i=0;
 
@@ -17,19 +18,23 @@ public class Principal {
             arrayUs[i]= sc.nextInt();
         }
 
+        //Imprimir el array
         for(i=0;i<10;i++) {
             System.out.print(arrayUs[i]+",");
         }
 
-        int num=0,cont=0;
+        System.out.print("\n");
+
+
+
+        int num=0,cont=0,j=0;
         for(i=0;i<10;i++){
-            num=arrayUs[i];
-            for (i=0;i<10;i++) {
-                if(num==arrayUs[i])
+            for (j=0;j<10;j++) {
+                if(arrayUs[i]==arrayUs[j])
                     cont++;
             }
-            System.out.print("prueba");
-            System.out.print(arrayUs[i]+" - "+cont);
+            System.out.print(arrayUs[i]+" - "+cont+"\n");
+            cont=0;
         }
 
     }

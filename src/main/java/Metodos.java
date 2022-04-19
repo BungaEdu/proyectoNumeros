@@ -1,5 +1,3 @@
-public class Metodos {
-    int miArray [];
-
+class Metodos {
 
 }

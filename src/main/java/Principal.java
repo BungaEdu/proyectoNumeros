@@ -4,38 +4,45 @@ El resultado es que me indique cuántas veces ha introducido los números
 */
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        int arrayUs [] = new int [10];
-        int arrayImp [] = new int [10];
+        /**************DECLARACIÓN*************/
+        int arrayUs[] = new int[10];
+        int arrayOrdenado[] = new int[10];
         Scanner sc = new Scanner(System.in);
-        int numUs = 0, i=0;
+        int numUs = 0, i = 0;
 
+        /*************PETICIÓN DATOS***************/
         System.out.println("Dime un número: ");
-        for(i=0;i<10;i++) {
-            arrayUs[i]= sc.nextInt();
+        for (i = 0; i < 10; i++) {
+            arrayUs[i] = sc.nextInt();
         }
 
-        //Imprimir el array
-        for(i=0;i<10;i++) {
-            System.out.print(arrayUs[i]+",");
-        }
+        Arrays.sort(arrayUs);
 
-        System.out.print("\n");
+        /*************REPETICIONES***************/
+        int num = 0, cont = 1, j = 0, aux=0;
 
-
-
-        int num=0,cont=0,j=0;
-        for(i=0;i<10;i++){
-            for (j=0;j<10;j++) {
-                if(arrayUs[i]==arrayUs[j])
-                    cont++;
+        for (i = 0; i < 10; i++) {
+            System.out.println(arrayUs[i]);
+            if(arrayUs[i]==arrayUs[i+1]) {
+                cont++;
             }
-            System.out.print(arrayUs[i]+" - "+cont+"\n");
-            cont=0;
+            else {
+                System.out.println(arrayUs[i] + " - " + cont);
+                cont=0;
+            }
         }
 
-    }
-}
+
+        }
+        /************ELIMINAR DUPLICADOS**********/
+
+    } }
+
+
+
+
